@@ -64,15 +64,16 @@ function showText(Text){
 function getContent_JQ(){
 	//上面是下面的简写方式
 	$.getJSON("./files/example.json",function(data){
-		alert(data["name"]);
+		//alert(Object.prototype.toString.call(data));
+		alert(typeof data);
 	});
 
 	$.ajax({
 		type: "GET",
-		url: "./files/example.js",
-		dataType:"script",//text,json,html,jsonp,xml,script[Jquery 的ajax可请求的数据类型就比JavaScript的ajax多多了]
+		url: "./files/example.xml",
+		dataType:"xml",//text,json,html,jsonp,xml,script[Jquery 的ajax可请求的数据类型就比JavaScript的ajax多多了]
 		success:function(data){
-			alert(data);
+			alert(data.name);
 		}
 	});
 }
@@ -83,9 +84,9 @@ function getContent_JQ(){
 3:请求t类型与返回实际值
  --请求 					返回
  --text                   txt文件内容
- --json                   [object Object]
- --html 					html文件内容
- --xml                    [object XMLDocument]
+ --json                   [object Object]<获取json文件访问的直接是JS对象了>
+ --html 				  html文件内容
+ --xml                    [object XMLDocument]<需要DOMParser()解析为DOM结构再使用DOM的方法访问>
  --script                 脚本内容
 4:测试程序请求的是本地文件，所以只有在非webkit内核浏览器才能运行(如Firefox)
 */
