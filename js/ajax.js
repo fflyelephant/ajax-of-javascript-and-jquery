@@ -81,11 +81,11 @@ function getContent_JQ(){
 /* 总结
 1:JavaScript的ajax 只能请求text or xml 类型的数据
 2:Jquery的ajax可请求包括json在内的多种数据类型
-3:请求t类型与返回实际值
- --请求 					返回
+3:请求类型与返回实际值
+ --请求 			 返回
  --text                   txt文件内容
  --json                   [object Object]<获取json文件访问的直接是JS对象了>
- --html 				  html文件内容
+ --html 		  html文件内容
  --xml                    [object XMLDocument]<需要DOMParser()解析为DOM结构再使用DOM的方法访问>
  --script                 脚本内容
 4:测试程序请求的是本地文件，所以只有在非webkit内核浏览器才能运行(如Firefox)
